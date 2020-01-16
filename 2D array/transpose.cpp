@@ -17,7 +17,7 @@ int main()
         }
     }
 
-    std::cout << "{ "<<std::endl;
+    std::cout << "{ " << std::endl;
 
     for (int i = 0; i < r; i++)
     {
@@ -28,5 +28,19 @@ int main()
         std::cout << std::endl;
     }
 
-    std::cout << " }"<<std::endl;
+    std::cout << " }" << std::endl;
+
+    std::cout << "{ " << std::endl;
+
+    std::cout << "Transpose is :" << std::endl;
+
+    for (int i = 0; i < c; i++)
+    {
+        for (int j = 0; j < r; j++)
+        {
+            std::cout << arr[j][i];
+        }
+        std::cout << std::endl;
+    }
+    std::cout << " }" << std::endl;
 }
