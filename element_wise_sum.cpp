@@ -2,7 +2,7 @@
 
 int main()
 {
-    int r, c, sum;
+    int r, c;
 
     std::cout << "Enter number of rows and columns of  matrix " << std::endl;
     std::cin >> r >> c;
@@ -57,16 +57,16 @@ int main()
 
     std::cout << " }" << std::endl;
 
-    std::cout << "Sum of matrix is" << std::endl;
+    std::cout << "Element wise sum of matrix is" << std::endl;
 
+    std::cout << "{ " << std::endl;
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
         {
-            sum += arr[i][j] + arr1[i][j];
+            std::cout << arr[i][j] + arr1[i][j];
         }
         std::cout << std::endl;
     }
-
-    std::cout << sum << std::endl;
+    std::cout << " }" << std::endl;
 }
