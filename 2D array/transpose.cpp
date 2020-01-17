@@ -30,9 +30,9 @@ int main()
 
     std::cout << " }" << std::endl;
 
-    std::cout << "{ " << std::endl;
-
     std::cout << "Transpose is :" << std::endl;
+
+    std::cout << "{ " << std::endl;
 
     for (int i = 0; i < c; i++)
     {
