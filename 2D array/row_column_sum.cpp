@@ -13,7 +13,7 @@ int main()
 
     for(int i=0;i<m;i++){
         column[i]=0;
-    }
+     }
     for (int i = 0; i < n; i++)
     {
         std::cout << "Enter elements for " << i + 1 << " row" << std::endl;
@@ -24,7 +24,7 @@ int main()
         }
     }
     std::cout << "array elements with their row and column sum\n";
-int k=0;
+    int k=0;
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
@@ -32,7 +32,8 @@ int k=0;
             column[k] += arr1[j][i];
         }
         k++;
-    }
+        }
+        
        for (int i = 0; i < n; i++)
         {
         for (int j = 0; j < m; j++)
