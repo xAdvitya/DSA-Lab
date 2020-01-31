@@ -14,6 +14,7 @@ int main() {
        temp = new Node();
        cout<<"Enter Data Element"<<endl;
        cin>>temp->data;
+       temp->lin=NULL;
        if(head ==NULL){
            head = temp;
        }
