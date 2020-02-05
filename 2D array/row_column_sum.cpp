@@ -3,7 +3,6 @@ int main()
 {
     int n, m, row = 0;
 
-
     std::cout << "Enter number of rows\n";
     std::cin >> n;
     std::cout << "Enter number of columns\n";
