@@ -6,7 +6,7 @@ int stx[100],top=-1;
 void show();
 void push(int top,int n,int value);
 void pop();
-
+// currently buggy 
 int main()
 {
     int n;
