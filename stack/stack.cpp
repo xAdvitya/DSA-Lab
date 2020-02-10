@@ -4,23 +4,25 @@ using namespace std;
 int stx[100],top=-1;
 
 void show();
-void push(int top,int n,int value);
+void push(int n,int value);
 void pop();
-// currently buggy 
+
 int main()
 {
     int n;
-    cout<<"enter the size of stack";
+    cout<<"enter the size of stack"<<endl;
     cin>>n;
     int choice = 0,val;
     while(choice != 4){
-        cout<<"Enter your choice "<<endl;
+        cout<<"Enter 1 to push a value "<<endl;
+        cout<<"Enter 2 to pop a value "<<endl;
+        cout<<"Enter 3 to show all values int the stack"<<endl;
         cin>>choice;
         switch(choice){
             case 1:{
                 cout<<"Enter value to enter in the stack"<<endl;
                 cin>>val;
-                push(top,n,val);
+                push(n,val);
                 break;
             }
             case 2:{
@@ -44,19 +46,19 @@ int main()
     }
 }
 
-void push(int top,int n,int value){
-    cout<<top <<"top is "<<endl;
-    if(top<=n-1){
+void push(int n,int value){
+    
+    if(top<n-1){
         top++;
         stx[top] = value;
         cout<<"value pushed"<<endl;
     }
     else{
-        cout<<"stack overflowing "<<endl;
+        cout<<"stack overflowing "<<endl<<"value not pushed"<<endl;
     }
 }
 void pop(){
-    if(top>0){
+    if(top>=0){
         cout<<"value "<<stx[top]<<" is popped"<<endl;
         top--;
     }
@@ -66,7 +68,7 @@ void pop(){
 }
 
 void show(){
-    for(int i=0;i<=top;i++){
+    for(int i=0;i<top;i++){
         cout<<stx[i]<<endl;
     }
 }
