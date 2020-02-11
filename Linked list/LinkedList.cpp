@@ -76,12 +76,13 @@ void insert_at_nh(int n,int val){
     if(n==1){
         temp->link = head;
         head = temp;
+        return;
     }
 
     Node *temp2 = head;  
     for(int i=1;i<n-1;i++){
             temp2 = temp->link;
-        }
+            }
         temp->link = temp2->link;
         temp2->link = temp;
     }
@@ -92,10 +93,11 @@ int main() {
     
         cout<<"Enter 1 to insert an element at front"<<endl;
         cout<<"Enter 2 to insert an element at back"<<endl;
-        cout<<"Enter 3 to show all element"<<endl;
-        cout<<"Enter 4 to delete an element from the last"<<endl;
-        cout<<"Enter 5 to delete an element from the front"<<endl;
-        cout<<"Enter 6 to end the program"<<endl;
+        cout<<"Enter 3 to delete a node from nth position"<<endl;
+        cout<<"Enter 4 to show all element"<<endl;
+        cout<<"Enter 5 to delete an element from the last"<<endl;
+        cout<<"Enter 6 to delete an element from the front"<<endl;
+        cout<<"Enter 7 to stop"<<endl;
         cin>>n;
 
         switch(n){
@@ -104,7 +106,20 @@ int main() {
                 insert_at_front();
                 break;
                 }
-        case 3:{
+            case 2:{
+           insert_at_last();
+           break;
+           }
+    case 3:{
+        int x,n;
+        cout<<"enter position to enter value"<<endl;
+        cin>>x;
+        cout<<"enter value"<<endl;
+        cin>>n;
+        insert_at_nh(x,n);
+        break;
+    }
+        case 4:{
             Node *temp;
     temp = head;
     cout<<"data elements are "<<endl;
@@ -114,23 +129,15 @@ int main() {
     }
     break;
     }
-    case 4:{
+    case 5:{
 
         delete_node_last();
         break;
     }
-    case 5:{
+    case 6:{
         delete_node_front();
         break;
-    }
-    case 2:{
-           insert_at_last();
-           break;
-    }
-    case 6:{
-        insert_at_nh(2,60);
-        break;
-    }
+      }
     
         }
 }
