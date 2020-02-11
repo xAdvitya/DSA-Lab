@@ -19,6 +19,8 @@ void insert_node_at_front();
 void insert_node_at_back();
 void insert_at_nth();
 
+void delete_from_front();
+
 void insert_node_at_front(){
     Node *temp = new Node;
     cout<<"Enter data value "<<endl;
@@ -86,12 +88,33 @@ void insert_at_nth(){
 
 }
 
+void delete_from_front(){
+
+    Node *newx = head;
+    newx = newx->next;
+    head = newx;
+    //free(newx);
+}
+
+void delete_from_back(){
+Node *newx = head;
+Node *temp = head;
+    while(temp->next != NULL){
+        newx = temp;
+        temp = temp->next;
+    }
+    newx->next = NULL;
+    
+}
+
 
 int main(){
     int n=3;
     cout<<"enter 1 to insert at front"<<endl;
     cout<<"enter 2 to insert at back"<<endl;
     cout<<"enter 3 to insert at nth position"<<endl;
+    cout<<"enter 4 to delete from front"<<endl;
+    cout<<"enter 5 to delete from back"<<endl;
     cout<<"enter 9 to view all elements"<<endl;
     while(n!=10){
 cin>>n;
@@ -106,6 +129,14 @@ case 2:{
 }
 case 3:{
     insert_at_nth();
+    break;
+}
+case 4:{
+     delete_from_front();
+     break;
+}
+case 5:{
+    delete_from_back();
     break;
 }
 
