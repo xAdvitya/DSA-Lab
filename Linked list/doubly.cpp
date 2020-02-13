@@ -119,9 +119,9 @@ void delete_from_nth(int n){
     for(int i=1;i<n-1;i++){
         temp = temp->next;
         }
-        Node *temp2 = temp->next;
-    temp->next =  temp2->next;
-    free(temp2);
+
+temp->next = temp->next->next;
+temp->next->prev = temp;
     
     }
 }
