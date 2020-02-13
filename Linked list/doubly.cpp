@@ -119,7 +119,7 @@ void delete_from_nth(int n){
         }
         Node *temp2 = temp->next;
     temp->next =  temp2->next;
-    //free(temp2);
+    free(temp2);
     
     }
 }
@@ -158,7 +158,10 @@ case 5:{
     break;
 }
 case 6:{
-    delete_from_nth(3);
+    int n;
+    cout<<"Enter position from where you want to delete"<<endl;
+    cin>>n;
+    delete_from_nth(n);
     break;
 }
 case 9:{
