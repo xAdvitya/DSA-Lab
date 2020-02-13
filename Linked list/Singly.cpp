@@ -109,10 +109,11 @@ int main() {
     
         cout<<"Enter 1 to insert an element at front"<<endl;
         cout<<"Enter 2 to insert an element at back"<<endl;
-        cout<<"Enter 3 to delete a node from nth position"<<endl;
+        cout<<"Enter 3 to add a node from nth position"<<endl;
         cout<<"Enter 4 to show all element"<<endl;
         cout<<"Enter 5 to delete an element from the last"<<endl;
         cout<<"Enter 6 to delete an element from the front"<<endl;
+        cout<<"Enter 8 to delete a node from nth position"<<endl;
         cout<<"Enter 7 to stop"<<endl;
         cin>>n;
 
@@ -155,7 +156,10 @@ int main() {
         break;
       }
       case 8:{
-        delete_from_nth(3);
+          int n;
+          cout<<"Enter position where you want to delete"<<endl;
+          cin>>n;
+        delete_from_nth(n);
       }
     
         }
