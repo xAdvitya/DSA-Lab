@@ -9,6 +9,7 @@ void delete_node_front();
 void insert_at_front();
 void insert_at_last();
 void insert_at_nh(int n,int val);
+void delete_from_nth(int n);
 
 Node *head=NULL;
 
@@ -48,7 +49,22 @@ void insert_at_front(){
             head = temp;
         }
 }
-
+void delete_from_nth(int n){
+    Node *temp = head;
+    if(n==1){
+        temp = temp->link;
+        head = temp;
+    }
+    else{
+    for(int i=1;i<n-1;i++){
+        temp = temp->link;
+    }
+    Node *temp2 = temp->link;
+    temp->link =  temp2->link;
+    free(temp2);
+    
+    }
+}
 void insert_at_last(){
 
 Node *temp=NULL,*newx=NULL;
@@ -137,6 +153,9 @@ int main() {
     case 6:{
         delete_node_front();
         break;
+      }
+      case 8:{
+        delete_from_nth(3);
       }
     
         }
