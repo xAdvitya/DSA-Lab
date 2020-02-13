@@ -31,8 +31,8 @@ void insert_node_at_front(){
         head = temp;
         }
     else{
-    temp->next = head;
     head->prev = temp;
+    temp->next = head;
     head = temp;
             }   
     }
@@ -51,7 +51,9 @@ void insert_node_at_back(){
         while(newx->next != NULL){
             newx = newx->next;
         }
+         temp->prev = newx;
          newx->next = temp;
+
     }
     
 }
@@ -134,6 +136,7 @@ int main(){
     cout<<"enter 4 to delete from front"<<endl;
     cout<<"enter 5 to delete from back"<<endl;
     cout<<"enter 6 to delete from nth position"<<endl;
+    cout<<"enter 8 to view all elements backward"<<endl;
     cout<<"enter 9 to view all elements"<<endl;
 cin>>n;
 switch(n){
@@ -163,6 +166,22 @@ case 6:{
     cin>>n;
     delete_from_nth(n);
     break;
+}
+case 8:{
+
+Node *temp = head;
+cout<<"all the values in doubly "<<endl;
+while(temp->next != NULL){
+    temp = temp->next;
+}
+
+while(temp != head){
+    cout<<temp->data<<endl;
+    temp = temp->prev;
+}
+cout<<temp->data<<endl;
+break;
+
 }
 case 9:{
     Node *temp = head;
