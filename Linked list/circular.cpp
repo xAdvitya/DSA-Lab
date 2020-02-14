@@ -7,16 +7,16 @@ struct Node{
 
 Node *head = NULL;
 Node *last = NULL;
+
 void insert_at_back(int val);
 void insert_at_front(int val);
 void delete_from_back();
 
-
 void delete_from_back(){
     Node *temp = head;
     Node *newx;
-    while(temp->next != NULL){
-        newx = temp->next;
+    while(temp->next != head){
+        newx = temp;
         temp = temp->next;
     }
     newx->next = head;
