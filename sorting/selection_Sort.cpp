@@ -16,15 +16,17 @@ int main(){
    
 for(int i=0;i<n-1;i++){
      int min = arr[i];
+     cout<<"min "<<min<<endl;
     for(int j=i+1;j<n;j++){
         if(min > arr[j]){
             min = arr[j];
             pos = j; 
         }
+    }
         int temp = arr[i];
         arr[i] = min;
         arr[pos] = temp;
-    }
+    
 }
 
 for(int i=0;i<n;i++){
