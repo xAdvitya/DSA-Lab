@@ -42,21 +42,24 @@ void Queue::display(){
 }
 
 void Queue::deque(){
+
+    if(head == nullptr){
+        cout<<"Queue is already empty bro !!\n";
+    }
+    else
+    {
     Queue *temp = head;
     head = head->next;
-
-    delete temp;
+    delete temp;   
+    }
 }
 
 int main(int argc, const char** argv) {
     Queue q;
     q.enqueue(1);
     q.enqueue(2);
-    q.enqueue(3);
-    q.enqueue(4);
-    q.enqueue(5);
     
-    q.deque();
+    //q.deque();
     q.deque();
 
     q.display();
