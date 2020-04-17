@@ -1,11 +1,3 @@
-/*
-
-nightly build
-
-*/
-
-//////////////////////////////////
-
 #include <iostream>
 using namespace std;
 struct Node{
@@ -136,8 +128,8 @@ int main(){
     cout<<"enter 4 to delete from front"<<endl;
     cout<<"enter 5 to delete from back"<<endl;
     cout<<"enter 6 to delete from nth position"<<endl;
-    cout<<"enter 8 to view all elements backward"<<endl;
-    cout<<"enter 9 to view all elements"<<endl;
+    cout<<"enter 7 to view all elements backward"<<endl;
+    cout<<"enter 8 to view all elements"<<endl;
 cin>>n;
 switch(n){
 case 1:{
@@ -167,7 +159,7 @@ case 6:{
     delete_from_nth(n);
     break;
 }
-case 8:{
+case 7:{
 
 Node *temp = head;
 cout<<"all the values in doubly "<<endl;
@@ -183,7 +175,7 @@ cout<<temp->data<<endl;
 break;
 
 }
-case 9:{
+case 8:{
     Node *temp = head;
 cout<<"all the values in doubly "<<endl;
 while(temp != NULL){
@@ -192,9 +184,8 @@ while(temp != NULL){
 }
 break;
 }
-    }
-    
-    }
 
+    }
+        }
 
 }
