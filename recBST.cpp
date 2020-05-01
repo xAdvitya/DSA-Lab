@@ -30,6 +30,25 @@ node* recInsert(int data,node *root){
 
 }
 
+node* recSearch(int query,node *node1){
+    if(node1 == NULL){
+        cout<<"\nnot found\n";
+        return NULL;
+    }
+    else{
+        if(node1->data == query){
+            cout<<"\nfound\n";
+            return node1;
+        }
+        else if(query < node1->data){
+            return recSearch(query,node1->leftchild);
+        }
+        else{
+            return recSearch(query,node1->rightchild);
+        }
+    }
+}
+
 void inorder(node *p)
 {
  if(p)
@@ -50,4 +69,10 @@ int main(){
 
     inorder(root);
 
+    node *node1 = root;
+
+    recSearch(30,node1);
+    recSearch(50,node1);
+    recSearch(40,node1);
+    
 }

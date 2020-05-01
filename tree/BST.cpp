@@ -45,6 +45,25 @@ void insert(int data){
     }
 }
 
+void search(int query){
+
+    node *node1 = root;
+
+    while(node1 != NULL){
+        if(node1->data == query){
+            cout<<"\nelement found\n";
+            return;
+        }
+        else if(node1->data > query){
+            node1 = node1->leftchild;
+        }
+        else if(node1->data < query){
+            node1 = node1->rightchild;
+        }
+    }
+    cout<<"\nelement not found\n";
+}
+
 void inorder(node *p)
 {
  if(p)
@@ -65,4 +84,7 @@ int main(){
 
     inorder(root);
 
+    search(10);
+    search(20);
+    search(80);
 }
