@@ -49,6 +49,86 @@ node* recSearch(int query,node *node1){
     }
 }
 
+int height(node *p){
+
+    int x=0,y=0;
+
+    if(p == NULL){
+        return 0;
+    }
+    else{
+        x = height(p->leftchild);
+        y = height(p->rightchild); 
+    }
+
+    if(x>y){
+        return x+1;
+    }
+    else{
+        y+1;
+    }
+
+}
+
+node* inSucess(node*p){
+    while(p && p->leftchild != NULL){
+        p = p->leftchild;
+    }
+
+    return p;
+}
+
+
+node* inPred(node*p){
+    while(p && p->rightchild != NULL){
+        p = p->rightchild;
+    }
+    return p;
+}
+
+node* recDelete(int query,node *p){
+
+    node *q = NULL;
+
+    if(p == NULL){
+        return NULL;
+    }
+
+    if(p->leftchild == NULL && p->rightchild == NULL){
+
+        if(p == root){
+            root = NULL;
+        }
+
+        delete p;
+        return NULL;
+    }
+
+    if(p->data > query){
+        p->leftchild = recDelete(query,p->leftchild); 
+    }
+    else if(p->data < query){
+         p->rightchild = recDelete(query,p->rightchild);
+    }
+    else{
+        if(height(p->rightchild) > height(p->leftchild)){
+            q = inSucess(p->rightchild);
+            p->data = q->data;
+            p->rightchild = recDelete(q->data,p->rightchild);
+        }
+        else{
+            q = inPred(p->leftchild);
+            p->data = q->data;
+            p->leftchild = recDelete(q->data,p->leftchild);
+        }
+    }
+
+    return p;
+
+}
+
+
+
 void inorder(node *p)
 {
  if(p)
@@ -62,10 +142,11 @@ void inorder(node *p)
 
 int main(){
 
-    root =  recInsert(10,root); 
+    root =  recInsert(50,root); 
+    recInsert(10,root);
     recInsert(40,root);
+    recInsert(20,root);
     recInsert(30,root);
-    recInsert(80,root);
 
     inorder(root);
 
@@ -74,5 +155,10 @@ int main(){
     recSearch(30,node1);
     recSearch(50,node1);
     recSearch(40,node1);
+
+    recDelete(50,root);
+    recDelete(30,root);
+
+    inorder(root);
     
 }
